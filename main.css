@@ -7,6 +7,17 @@ body{
      padding: 0;
      text-align: center;
 }
+a.nostyle{
+	background-color: black;
+	color: white;
+	margin: 5px;
+	
+	border-radius: 10px;
+	background-size: auto;
+	padding: 0;
+	width: 300px;
+
+}
 a{
 	color: black;
 	margin: 5px;
