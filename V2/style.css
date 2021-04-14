@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: burlywood;
+}
+
+nav {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .mainMenu {
+    display: flex;
+    list-style: none;
+}
+
+nav .mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav .mainMenu li a:hover {
+    background: white;
+    color: black;
+}
+
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+nav .mainMenu .closeMenu,
+.icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+}
+
+.fa-facebook:hover {
+    color: rgb(0, 110, 255);
+}
+
+.fa-instagram:hover {
+    color: rgb(255, 0, 191);
+}
+
+.fa-github:hover {
+    color: grey;
+}
+
+.fa-linkedin:hover {
+    color: rgb(137, 172, 219);
+}
+
+.fa-envelope:hover {
+    color: rgb(81, 101, 187);
+}
+
+nav .logo {
+    /* margin-left: 100px; */
+    padding-left: 10px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    vertical-align: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doggy {
+    width: 25%;
+    margin: 20px;
+}
+
+#textabout {
+    margin: 2%;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: large;
+}
+
+#copy {
+    background: grey;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 2s;
+}
+
+#hoverdog {
+    margin: 19px;
+    width: 54%;
+}
+
+.container {
+    background: black;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    width: 80%;
+    height: 80%;
+}
+
+.contact a {
+    font-size: 60px;
+    align-items: center;
+    margin: 2%;
+    justify-content: space-around;
+}
+
+@media(max-width: 800px) {
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        transition: top 1s ease;
+        display: none
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        background: white;
+        color: black;
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+    }
+    nav .logo {
+        padding-left: 10px;
+        margin-top: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        vertical-align: center;
+    }
+    .container {
+        font-size: 12;
+    }
+    .doggy {
+        width: 42%;
+    }
+    #hoverdog {
+        width: 91.2%;
+    }
+    .contact a {
+        font-size: 70px;
+        margin: 3%;
+    }
+}
