@@ -197,7 +197,7 @@ nav .logo {
     nav .mainMenu {
         height: 100vh;
         position: fixed;
-        top: 0;
+        top: -150%;
         right: 0;
         left: 0;
         z-index: 10;
@@ -206,7 +206,7 @@ nav .logo {
         align-items: center;
         background: black;
         transition: top 1s ease;
-        display: none
+        display: flex;
     }
     nav .mainMenu .closeMenu {
         display: block;

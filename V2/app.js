@@ -6,13 +6,15 @@
 
 function show() {
     const mainMenu = document.querySelector(".mainMenu");
-    mainMenu.style.display = 'flex';
+    // mainMenu.style.display = 'flex';
     mainMenu.style.top = '0';
 }
 
 function close() {
     const mainMenu = document.querySelector(".mainMenu");
-    mainMenu.style.top = '-100%';
+    mainMenu.style.top = '-150%';
+
+
 }
 
 //#region
