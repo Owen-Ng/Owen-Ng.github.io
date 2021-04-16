@@ -3,6 +3,7 @@
 
 // openMenu.addEventListener('click', show);
 // closeMenu.addEventListener('click', close);
+"use strict";
 
 function show() {
     const mainMenu = document.querySelector(".mainMenu");
@@ -18,14 +19,42 @@ function close() {
 }
 
 //#region
+function state(str) {
 
-function start() {
-    $(".home").show();
-    $(".projects").hide()
-    $("#hoverdog").hide()
-    $(".work").hide()
-    $(".contact").hide()
-    $(".about").hide()
+    const array = ['.main', '.projects', ".work", ".contact", ".about"];
+    $(str).show();
+    array.forEach(e => {
+        if (e != str) {
+
+            $(e).hide();
+        }
+
+    });
+
+    // $(str).show();
+}
+
+function sessionPage(str) {
+    // Store
+    sessionStorage.setItem("page", str);
+}
+
+function launch() {
+    if (sessionStorage.getItem("page") == null) {
+        sessionPage(".main");
+    }
+    state(sessionStorage.getItem("page"));
+    $("#hoverdog").hide();
+
+
+}
+
+function main() {
+
+    state(".main");
+    sessionPage(".main");
+    $("#hoverdog").hide();
+
 }
 
 function doggyon() {
@@ -43,38 +72,29 @@ function doggyout() {
 }
 
 function gotoprojects() {
-    $(".home").hide()
-    $(".projects").show()
-    $(".work").hide()
-    $(".contact").hide()
-    $(".about").hide()
-    close()
+    state(".projects");
+    sessionPage(".projects");
+    close();
 }
 
 function gotowork() {
-    $(".home").hide()
-    $(".projects").hide()
-    $(".work").show()
-    $(".contact").hide()
-    $(".about").hide()
+    state(".work");
+    sessionPage(".work");
+
     close()
 }
 
 function gotocontact() {
-    $(".home").hide()
-    $(".projects").hide()
-    $(".work").hide()
-    $(".contact").show()
-    $(".about").hide()
+    state(".contact");
+    sessionPage(".contact");
+
+
     close()
 }
 
 function gotoabout() {
-    $(".home").hide()
-    $(".projects").hide()
-    $(".work").hide()
-    $(".contact").hide()
-    $(".about").show()
+    state(".about");
+
     close()
 }
 //endregion
@@ -94,7 +114,7 @@ function emailcopied() {
 
 }
 $(function() {
-    start()
+    launch();
     $(".closeMenu").on('click', close);
     $(".openMenu").on('click', show);
     const mainMenu = $(".mainMenu");
@@ -104,12 +124,7 @@ $(function() {
     $("#Work").on('click', gotowork)
     $("#Contact").on('click', gotocontact)
     $("#About").on('click', gotoabout)
-    $(".logo").on('click', start)
+    $(".logo").on('click', main)
     $("#email").on("click", emailcopied)
     $("#copy").hide()
-
-
-
-
-
 })
