@@ -1,5 +1,5 @@
 // "use strict"
-const noimage = "./No_image_Available.jpg";
+const noimage = "./No_Image_Available.jpg";
 var nominated = []
 function test(){
     $.ajax({
