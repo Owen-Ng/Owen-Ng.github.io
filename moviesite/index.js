@@ -4,7 +4,7 @@ var nominated = []
 function test(){
     $.ajax({
         method:"GET",
-        url: "http://www.omdbapi.com/?apikey=55ceea2f&s=jason&page=1-29",
+        url: "https://www.omdbapi.com/?apikey=55ceea2f&s=jason&page=1-29",
         processData:false, 
 		dataType:"json"
     }).done(function(data, status, jqx){
@@ -45,7 +45,7 @@ function gettinglisting(s, y, t, page){
     
     $.ajax({
         method:"GET",
-        url: `http://www.omdbapi.com/?apikey=55ceea2f&s=${s}&y=${y}&plot=full&type=${t}&page=${page}`,
+        url: `https://www.omdbapi.com/?apikey=55ceea2f&s=${s}&y=${y}&plot=full&type=${t}&page=${page}`,
         processData:false, 
 		dataType:"json"
     }).done(function(data, status, jqx){
@@ -81,7 +81,7 @@ function appendboxes(jsondata){
 function displayresult(s, y, t){
     $.ajax({
         method:"GET",
-        url: `http://www.omdbapi.com/?apikey=55ceea2f&s=${s}&y=${y}&plot=full&type=${t}`,
+        url: `https://www.omdbapi.com/?apikey=55ceea2f&s=${s}&y=${y}&plot=full&type=${t}`,
         processData:false, 
 		dataType:"json"
     }).done(function(data, status, jqx){
