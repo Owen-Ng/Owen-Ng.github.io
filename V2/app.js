@@ -87,14 +87,11 @@ function gotowork() {
 function gotocontact() {
     state(".contact");
     sessionPage(".contact");
-
-
     close()
 }
 
 function gotoabout() {
     state(".about");
-
     close()
 }
 //endregion

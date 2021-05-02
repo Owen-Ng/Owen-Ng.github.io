@@ -1,0 +1,135 @@
+body{
+    background: burlywood;
+    
+}
+.container{
+    width: 100%;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+#searchbar {
+    overflow: hidden;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.boxes {
+    border-radius: 10px;
+    display: flex;
+    background-color: aliceblue;
+    -ms-overflow-style: none;
+    
+    /* IE and Edge */
+    flex-wrap: wrap;
+
+    scrollbar-width: none;
+    /* min-width: 0px;
+    max-width: 79%; */
+    width: 100%;
+    
+    height: 75vh;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    border-style:solid ;
+    /* padding-left: 10px; */
+}
+.boxes::-webkit-scrollbar {
+    display: none;
+}
+.listing{
+    min-width: 0px;
+    max-width: 79%;
+    margin: auto;
+
+}
+
+
+.box{
+    border-radius: 2px;
+    background: blueviolet;
+    min-width: 120px;
+    max-width: 190px;
+    height: 250px;
+    
+    margin: 10px;
+    
+    flex: 1;
+    text-align: center;
+}
+.box img{
+    
+    width: 100%;
+    height: 75%;
+    margin: 0;
+    padding: 0;
+}
+.box p{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+}
+.title{
+    font-weight: bold;
+}
+
+.subtext{
+    height: 23%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.subtext::-webkit-scrollbar {
+    display: none;
+}
+
+#drawer{
+   
+    margin: auto;
+    right: 0;
+    left: 0;
+    position: fixed;
+    /* bottom:-35%; */
+    bottom: 0%;
+    background-color: black;
+    width: 65%;
+    height: 0px;
+    transition: bottom 1s ease;
+
+    
+}
+#drawer .boxes{
+    height: 38vh;
+}
+
+#drawer:hover{
+    bottom:38%;
+
+}
+#arrow{
+    border-radius: 10px 10px 0px 0px;
+    z-index: 10;
+    margin-top: -20px;
+    height:20px;
+    width: 80px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+#arrow img{
+    width: 20px;
+ 
+}
+.erase{
+    
+    border-radius: 50px;
+    position: fixed;
+    /* left: 110px; */
+    /* margin-left: 10%; */
+    /* left: 0;
+    top: 0; */
+
+
+}
