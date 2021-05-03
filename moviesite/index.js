@@ -1,6 +1,6 @@
 // "use strict"
 const noimage = "./No_Image_Available.jpg";
-var nominated = []
+let nominated = []
 function test(){
     $.ajax({
         method:"GET",
@@ -13,8 +13,23 @@ function test(){
         console.log("fail " + err.status + " " + JSON.stringify(err.responseJSON))
     })
 }
-function movieevent(title, year, img, id){
-    nominated.push({title:title, year:year, img,img, id:id});
+function checkmovienominated(id){
+    let result = false
+    nominated.forEach(e => {
+        if (e.id == id){
+            result = true
+        }
+    })
+    return result;
+    
+
+}
+function movieevent(title, year, img, id, drawer){
+    console.log(drawer);
+    if (drawer == false && checkmovienominated(id) != true){
+        nominated.push({title:title, year:year, img,img, id:id});
+    }
+    
     updateDrawer();
 
 }
@@ -29,12 +44,24 @@ function updateDrawer(){
 
     }
 }
-function movietemplate(title, year, img, id, drawer){
-    const template =  `<div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                            <button class= "erase" ${drawer?"": "hidden"}>X</button>
 
-                            <img src= ${img} alt = ${img}>
+function deleteselection(id){
+    
+    nominated = nominated.filter(e => {return String(e.id) != String(id)});
+    updateDrawer();
+    console.log(nominated)
+}
+function movietemplate(title, year, img, id, drawer){
+    const template =  `<div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}', ${drawer})">
+                            <div style="position: relative; width: 0; height: 0">
+                            <button onclick="deleteselection('${id}')" class= "erase" ${drawer?"": "hidden"}>X</button>
+                            </div>
+
+                            <img src= ${img} onerror="this.onerror=null;this.src='${noimage}';" alt = ${img}>
+                            
+
                             <div class = "subtext">     
+                            
                             <p class = "title">${title}</p>
                             <p class = "year">${year}</p>
                             </div>
@@ -65,6 +92,7 @@ function gettinglisting(s, y, t, page){
 function appendboxes(jsondata){
     let display = $("#movielisting").html();
         jsondata.forEach(e => {
+            console.log(e)
             if (e["Poster"] == "N/A"){
                 display += movietemplate(e["Title"], e["Year"], noimage, e["imdbID"], false);
 

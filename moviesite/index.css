@@ -124,12 +124,11 @@ body{
 }
 .erase{
     
-    border-radius: 50px;
-    position: fixed;
-    /* left: 110px; */
-    /* margin-left: 10%; */
-    /* left: 0;
-    top: 0; */
+    
+    position: absolute;
+    border-radius: 10px;
+    
+    /* padding: 0; */
 
 
 }
