@@ -25,34 +25,54 @@ function checkmovienominated(id){
 
 }
 function movieevent(title, year, img, id, drawer){
+
     console.log(drawer);
-    if (drawer == false && checkmovienominated(id) != true){
+
+  if (checkmovienominated(id) == true && drawer == false){
+       const old = $("#banner").html();
+        
+            $("#banner").html("The selected movie has already been nominated!");
+
+
+        
+        setTimeout(function(){
+        $("#banner").html(old);
+    }, 3000);
+    }
+
+    if (drawer == false && checkmovienominated(id) != true && nominated.length <5){
         nominated.push({title:title, year:year, img,img, id:id});
     }
+   
+    
     
     updateDrawer();
 
 }
 
 function updateDrawer(){
+    if (nominated.length >=5){
+        $("#banner").html("5 Nominated!");
+    }
     let acc = ""
-    if (nominated.length <=5){
-        nominated.forEach(e => {
+    
+    nominated.forEach(e => {
             acc += movietemplate(e.title, e.year, e.img, e.id, true)
         })
-        $('.drawerlisting').html(acc)
+    $('.drawerlisting').html(acc)
 
-    }
 }
 
 function deleteselection(id){
+    $("#banner").html("Nominate 5 movies");
     
+    // updateDrawer();
+    $(".drawerlisting #"+id ).fadeOut(1000);
     nominated = nominated.filter(e => {return String(e.id) != String(id)});
-    updateDrawer();
-    console.log(nominated)
+
 }
 function movietemplate(title, year, img, id, drawer){
-    const template =  `<div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}', ${drawer})">
+    const template =  `<div class="box" id = "${id}"onclick="movieevent('${title}', '${year}','${img}', '${id}', ${drawer})">
                             <div style="position: relative; width: 0; height: 0">
                             <button onclick="deleteselection('${id}')" class= "erase" ${drawer?"": "hidden"}>X</button>
                             </div>
@@ -92,7 +112,6 @@ function gettinglisting(s, y, t, page){
 function appendboxes(jsondata){
     let display = $("#movielisting").html();
         jsondata.forEach(e => {
-            console.log(e)
             if (e["Poster"] == "N/A"){
                 display += movietemplate(e["Title"], e["Year"], noimage, e["imdbID"], false);
 
@@ -157,9 +176,18 @@ function getformvalues(){
 
 
 }
+
 $(function(){
+    if (sessionStorage.getItem("nominated") ) {
+        nominated = JSON.parse(sessionStorage.getItem("nominated"))
+        updateDrawer();
+    }
+    
     test();
     yeardate();
     $("#searchbar button").on('click', getformvalues);
-    $(".box img").on('click', function(e){console.log("test")})
+    $(".box img").on('click', function(e){console.log("test")});
+    $(window).bind('beforeunload', function(){
+        sessionStorage.setItem("nominated", JSON.stringify(nominated));
+      });
 })
