@@ -2,6 +2,17 @@ body{
     background: burlywood;
     
 }
+#banner{
+    color: gold;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
 .container{
     width: 100%;
 
@@ -9,12 +20,83 @@ body{
     /* align-items: center; */
     text-align: center;
 }
-#searchbar {
-    overflow: hidden;
-    margin: 10px;
-    margin-bottom: 20px;
+#hint{
+    position: fixed;
+    right: 10px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#476b79;
 }
 
+#hintcontainer{
+    display: none;
+    position: fixed;
+    width: 150px;
+    background-color:aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    right: 50px;
+    border-style:solid ;
+    border-color: #476b79;
+    box-shadow: 2px 2px 3px 3px grey;
+}
+#searchbar {
+    overflow: hidden;
+    margin-bottom: 20px; 
+    width: 100%;
+    
+    
+}
+#searchbar input{
+    border-radius: 10px;
+    color:#476b79;
+    /* width: 20%; */
+    height: 20px;
+    border-color:#87ceeb ;
+    padding-left: 10px;
+  
+}
+#status{
+    display: inline-flex;
+    position: fixed;
+    height: 20px;
+    vertical-align:middle;
+    width: 90px;
+    margin-left: 5px;
+    color: red;
+    padding-top: 5px;
+}
+#searchbar button{
+    background: none;
+    /* height: 30px; */
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color:#87ceeb ;
+
+
+    outline: none;
+    box-shadow:none;
+    color: white;
+    border-radius: 10px;
+}
+input:focus, select:focus{
+    outline: none;
+    box-shadow:none;
+}
+#searchbar select{
+    border-radius: 10px;
+    color:#476b79;
+    /* width: 20%; */
+    height: 25px;
+    border-color:#87ceeb ;
+}
 .boxes {
     border-radius: 10px;
     display: flex;
@@ -33,6 +115,8 @@ body{
     overflow-y: scroll;
     justify-content: flex-start;
     border-style:solid ;
+    border-color: #476b79;
+    box-shadow: 2px 2px 3px 3px grey;
     /* padding-left: 10px; */
 }
 .boxes::-webkit-scrollbar {
@@ -48,7 +132,7 @@ body{
 
 .box{
     border-radius: 2px;
-    background: blueviolet;
+    background: #87ceeb;
     min-width: 120px;
     max-width: 190px;
     height: 250px;

@@ -33,8 +33,6 @@ function movieevent(title, year, img, id, drawer){
         
             $("#banner").html("The selected movie has already been nominated!");
 
-
-        
         setTimeout(function(){
         $("#banner").html(old);
     }, 3000);
@@ -138,6 +136,16 @@ function displayresult(s, y, t){
         for (let i = 1; i <= Math.ceil(total/10) ; i ++){
             gettinglisting(s, y, t, i );
         }
+        if (total == undefined){
+            $("#status").html("Input Invalid");
+            setTimeout(function(){
+                $("#status").html("");
+
+
+            }, 2000)
+
+
+        }
         
         
 
@@ -162,6 +170,7 @@ function yeardate(){
     $('select[name="year"]').html(years);
 }
 function getformvalues(){
+    
     $("#movielisting").html("");
 
     let array = []
@@ -173,6 +182,7 @@ function getformvalues(){
     // gettinglisting(array[0], array[1], array[2], 1 )
     // gettinglisting(array[0], array[1], array[2], 2 )
     displayresult(array[0], array[1], array[2])
+    return false;
 
 
 }
@@ -185,9 +195,23 @@ $(function(){
     
     test();
     yeardate();
-    $("#searchbar button").on('click', getformvalues);
+    $("form#searchbar ").submit(function(event){
+        event.preventDefault();
+        getformvalues();
+        return false;
+    });
     $(".box img").on('click', function(e){console.log("test")});
     $(window).bind('beforeunload', function(){
         sessionStorage.setItem("nominated", JSON.stringify(nominated));
       });
+    $("#hint").on("mouseover", function(event){
+        event.preventDefault();
+        $("#hintcontainer").show();
+
+    });
+    $("#hint").on("mouseout", function(event){
+        event.preventDefault();
+        $("#hintcontainer").hide();
+
+    });
 })

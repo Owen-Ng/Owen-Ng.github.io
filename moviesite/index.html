@@ -11,13 +11,32 @@
 	</head>
     <body>
     <div>
+        <video autoplay muted loop id="myVideo">
+            <source src="cloud.mp4" type="video/mp4">
+          </video>
+
+        
+            <div id="hint">
+            <i class="fa fa-question"></i>
+            
+            </div>
+            <div id = "hintcontainer">
+            <p>Click on Image to nominate</p>
+            <p>Hover over the up arrow to view your nominations and make
+                appropriate edit
+            </p>
+            
+        </div>
+        
+
+
 
         <div class="container">
             <h1 id = "banner">Nominate 5 movies</h1>
 
             <div>
-                <form id = "searchbar">
-                    <input type = "text" placeholder="Search a Movie Title..." autocomplete="off" value="" name="search">
+                <form id = "searchbar" >
+                    <input type = "text" minlength="3" placeholder="Search a Movie Title..." autocomplete="off" value="" name="search" required/>
                     <select  name="year"></select>
                     
                     <select name = "Type">
@@ -25,7 +44,8 @@
                         <option value = "series">Series</option>
                         <option value = "episode">Episode</option>
                     </select>
-                    <button type="button"><i class="fa fa-search"></i></button>
+                    <button type="submit"><i class="fa fa-search"> Search</i></button>
+                    <div id = "status"></div>
                 </form>
 
             </div>
@@ -35,24 +55,7 @@
         <div class= "container listing">
 
             <div class = "boxes" id = "movielisting">
-                <!-- <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                    <div style="position: relative; width: 0; height: 0">
-                    <button class= "erase" hidden>X</button>
-                    </div>
-                    <img src= ${img} alt = ${img}>
-                    <div class = "subtext">     
-                    <p class = "title">${title}</p>
-                    <p class = "year">${year}</p>
-                    </div>
-                </div>
-                <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                    <button class= "erase">X</button>
-                    <img src= ${img} alt = ${img}>
-                    <div class = "subtext">     
-                    <p class = "title">${title}</p>
-                    <p class = "year">${year}</p>
-                    </div>
-                </div> -->
+             
 
             </div>
 
@@ -62,41 +65,7 @@
             <div id = "drawer">
                 <div id="arrow"><img src="./up-arrow.svg"></div>
                 <div class="boxes drawerlisting">
-                    <!-- <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                        <img src= ${img} alt = ${img}>
-                        <div class = "subtext">     
-                        <p class = "title">${title}</p>
-                        <p class = "year">${year}</p>
-                        </div>
-                    </div>
-                    <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                        <img src= ${img} alt = ${img}>
-                        <div class = "subtext">     
-                        <p class = "title">${title}</p>
-                        <p class = "year">${year}</p>
-                        </div>
-                    </div>
-                    <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                        <img src= ${img} alt = ${img}>
-                        <div class = "subtext">     
-                        <p class = "title">${title}</p>
-                        <p class = "year">${year}</p>
-                        </div>
-                    </div>
-                    <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                        <img src= ${img} alt = ${img}>
-                        <div class = "subtext">     
-                        <p class = "title">${title}</p>
-                        <p class = "year">${year}</p>
-                        </div>
-                    </div>
-                    <div class="box" onclick="movieevent('${title}', '${year}','${img}', '${id}')">
-                        <img src= ${img} alt = ${img}>
-                        <div class = "subtext">     
-                        <p class = "title">${title}</p>
-                        <p class = "year">${year}</p>
-                        </div>
-                    </div> -->
+                   
                 </div>
 
             </div>
