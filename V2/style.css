@@ -116,7 +116,9 @@ nav .logo {
 
 
 /* Hide scrollbar for IE, Edge and Firefox */
-
+.doggycontainer{
+    transition: all ease-in;
+}
 .doggy {
     width: 25%;
     margin: 20px;

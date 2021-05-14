@@ -40,11 +40,12 @@ function sessionPage(str) {
 }
 
 function launch() {
+    $("#hoverdog").hide();
     if (sessionStorage.getItem("page") == null) {
         sessionPage(".main");
     }
     state(sessionStorage.getItem("page"));
-    $("#hoverdog").hide();
+    
 
 
 }
@@ -61,13 +62,14 @@ function doggyon() {
     $('#doggyText').html('OUFF OUFF!!!')
 
     $(".doggy").hide()
-    $("#hoverdog").show()
+    $("#hoverdog").fadeIn()
 }
 
 function doggyout() {
     $('#doggyText').html('Hello')
-    $(".doggy").show()
     $("#hoverdog").hide()
+    $(".doggy").fadeIn()
+    
 
 }
 

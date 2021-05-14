@@ -8,13 +8,16 @@
     <link rel="icon" href="./images/thiccVai.png">
     <!-- <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css"> -->
     <script src="jquery-3.5.1.min.js"></script>
-    <script src="./app.js"></script>
+    <script defer src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script defer src="animation.js"></script>
+
 </head>
 
 <body>
     <nav>
         <div class="logo">
-            <h1>Owen</h1>
+            <h1 id = "logoanime">Owen</h1>
         </div>
 
         <div class="openMenu">
@@ -37,7 +40,7 @@
 
     <div class="main page">
         <div class="container">
-            <h1>Welcome to my webpage! </h1>
+            <h1 id = "welcome">Welcome to my webpage! </h1>
 
             <h2> Here you can learn a bit about me.</h2>
 
@@ -45,11 +48,11 @@
         <div class="container doggycontainer">
             <h1 id="doggyText">Hello</h1>
             <img class="doggy" src="./images/thiccVai.png" alt="thiccVai">
-            <img id="hoverdog" src="./images/bufdog.gif" alt="hoverdog">
+            <img id="hoverdog" src="./images/bufdog.gif" alt="hoverdog" hidden>
         </div>
     </div>
     <!-- https://tenor.com/view/buff-dog-gif-19647125 -->
-    <div class="projects page">
+    <div class="projects page" style = "display: none;">
         <div class="container">
             <h1>Projects </h1>
         </div>
@@ -162,7 +165,7 @@
 
 
     </div>
-    <div class="work page">
+    <div class="work page" style = "display: none;">
         <div class="container">
             <h1>Work Experience</h1>
         </div>
@@ -236,7 +239,7 @@
 
     </div>
 
-    <div class="contact page">
+    <div class="contact page" style = "display: none;">
         <div class="container">
             <h1>Contact</h1>
 
@@ -259,7 +262,7 @@
 
     </div>
 
-    <div class="About page">
+    <div class="About page" style = "display: none;">
         <div class="container">
             <h1>About</h1>
 
