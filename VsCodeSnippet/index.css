@@ -1,0 +1,82 @@
+
+body{
+    text-align: center;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+#text-field{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#text-field textarea{
+    width: 40%;
+    height: 70vh;
+    margin: 10px;
+    border-radius: 10px;
+}
+#outputField{ color: white }
+
+#Copy{
+    position:absolute;
+    top: 120px;
+    right: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 10px;
+}
+#important{
+    height: 40px;
+    width: 20px;
+    font-size: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.575);
+    color: black;
+    cursor: pointer;
+
+}
+#important:hover {
+    color: white;
+}
+#important:hover , #container{
+    bottom: 5px;
+}
+
+#container{
+    border-style: solid;
+    border-color: black;
+    position: fixed;
+    margin: auto;
+    bottom: -600px;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    background-color: rgb(76, 71, 71);
+    color: white;
+    border-radius: 10px;
+    transition: bottom 3s;
+}
+/* #container:hover{
+    bottom: 5px;
+
+
+} */
+.swiper-container {
+    width: 80%;
+    height: 80%;
+    text-align: center;
+  }
+.swipper-slide{
+    text-align: center;
+}
+img{
+    height: 90%;
+    width: 85%;
+}
+
