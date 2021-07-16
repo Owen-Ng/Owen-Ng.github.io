@@ -94,6 +94,7 @@ function gotocontact() {
 
 function gotoabout() {
     state(".about");
+    sessionPage(".about");
     close()
 }
 //endregion
