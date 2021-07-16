@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // })
     inputField.addEventListener('input', function(event){
         const snippet = toSnippet(event.target.value);
-        console.log(snippet)
+        
         outputField.value = snippet.replace(new RegExp('","', "g"), '",\n"');
         //That g on RegExp means globally so the regex will be apply everywhere in the snippet
     })
