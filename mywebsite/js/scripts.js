@@ -6,6 +6,10 @@
 //
 // Scripts
 // 
+async function getGithubRepos(){
+    let repos = await $.get("https://api.github.com/users/Owen-Ng/repos")
+    
+}
 function emailcopied() {
     var $temp = $("<input>");
     $("body").append($temp);
