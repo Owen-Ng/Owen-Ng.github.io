@@ -1,13 +1,11 @@
+import {encrypt, decrypt, toSnippet} from './scripts/script'
 const inputField = document.getElementById('inputField');
 const outputField = document.getElementById('outputField');
 const Copied = document.getElementById('Copy')
 const im = document.getElementById('important');
 const container = document.getElementById("container")
-function toSnippet(s){
-    const res = s.split("\n");
-    return JSON.stringify(res);
+const option = document.getElementById("pick")
 
-}
 function Copy(event){
     // outputField.focus();
     const el = document.createElement('textarea');
@@ -44,9 +42,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //     container.getElementById("container").style.bottom = "-600px";
     // })
     inputField.addEventListener('input', function(event){
-        const snippet = toSnippet(event.target.value);
+        const value = event.target.value;
+        let result = ""
+
+        pick = option.value()
+
+        if (pick === 'Encrypt'){
+            result = encrypt(value)
+
+        }else if (pick === 'Decrypt'){
+            result = decrypt(value)
+
+        } else if (pick === 'Vs Code Snippet'){
+            result = toSnippet(value)
+        }
         
-        outputField.value = snippet.replace(new RegExp('","', "g"), '",\n"');
+        outputField.value = result;
         //That g on RegExp means globally so the regex will be apply everywhere in the snippet
     })
 });
